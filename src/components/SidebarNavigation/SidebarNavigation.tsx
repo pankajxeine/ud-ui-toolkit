@@ -1,0 +1,288 @@
+import * as React from "react";
+import { useLocation } from "react-router-dom";
+import { styled } from "@mui/material";
+import { Avatar } from "../Avatar";
+import { Collapse } from "../Collapse";
+import { Divider } from "../Divider";
+import { Tooltip } from "../Tooltip";
+import { Icon } from "../Icon";
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "../List";
+import type { } from "@mui/material/themeCssVarsAugmentation";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Link } from "../Link";
+import type { SidebarNavigationProps } from "./ISidebar";
+
+import {
+  getItemTitle,
+  getPageItemFullPath,
+  hasSelectedNavigationChildren,
+  isPageItemSelected,
+} from "../../helpers/navigation";
+
+import { getDrawerSxTransitionMixin } from "../../utils";
+import pxToRem from "../../helpers/pxToRem";
+
+const NavigationListItemButton = styled(ListItemButton)(({ theme }) => ({
+  borderRadius: 8,
+  "&.Mui-selected": {
+    paddingLeft: 7,
+    backgroundColor: "transparent",
+    borderLeft: `${pxToRem(4)} solid ${(theme.vars ?? theme).palette.primary.main}`,
+    borderTopLeftRadius: 4,
+    borderBottomLeftRadius: 4,
+
+    "& .MuiListItemIcon-root > svg": {
+      color: (theme.vars ?? theme).palette.primary.dark,
+    },
+    "& .MuiTypography-root": {
+      color: (theme.vars ?? theme).palette.text.primary,
+      fontWeight: 600,
+    },
+    "& .MuiAvatar-root": {
+      backgroundColor: (theme.vars ?? theme).palette.primary.dark,
+    },
+  },
+  "& .MuiSvgIcon-root": {
+    color: (theme.vars ?? theme).palette.action.active,
+  },
+  "& .MuiAvatar-root": {
+    backgroundColor: (theme.vars ?? theme).palette.action.active,
+  },
+}));
+
+
+/**
+ * @ignore - internal component.
+ */
+const SidebarNavigation = ({
+  subNavigation,
+  basePath = "",
+  depth = 0,
+  onLinkClick,
+  isMini = false,
+  isFullyExpanded = true,
+  hasDrawerTransitions = false,
+  selectedItemId,
+}: SidebarNavigationProps) => {
+  const location = useLocation();
+  const pathname = location.pathname;
+  console.log("location", pathname);
+
+  const initialExpandedSidebarItemIds = React.useMemo(
+    () =>
+      subNavigation
+        .map((navigationItem, navigationItemIndex) => ({
+          navigationItem,
+          originalIndex: navigationItemIndex,
+        }))
+        .filter(({ navigationItem }) =>
+          hasSelectedNavigationChildren(navigationItem, basePath, pathname),
+        )
+        .map(({ originalIndex }) => `${depth}-${originalIndex}`),
+    [basePath, depth, pathname, subNavigation],
+  );
+
+  const [expandedSidebarItemIds, setExpandedSidebarItemIds] = React.useState(
+    initialExpandedSidebarItemIds,
+  );
+
+  const handleOpenFolderClick = React.useCallback(
+    (itemId: string) => () => {
+      setExpandedSidebarItemIds((previousValue) =>
+        previousValue.includes(itemId)
+          ? previousValue.filter(
+            (previousValueItemId) => previousValueItemId !== itemId,
+          )
+          : [...previousValue, itemId],
+      );
+    },
+    [],
+  );
+
+  return (
+    <List sx={{ padding: 0, mb: depth === 0 ? 4 : 1, pl: 2 * depth }}>
+      {subNavigation.map((navigationItem, navigationItemIndex) => {
+        if (navigationItem.kind === "header") {
+          return (
+            <ListSubheader
+              key={`subheader-${depth}-${navigationItemIndex}`}
+              component="div"
+              sx={{
+                fontSize: 12,
+                fontWeight: "700",
+                color: (theme) => theme.palette.text.secondary,
+                height: isMini ? 0 : 40,
+                ...(hasDrawerTransitions
+                  ? getDrawerSxTransitionMixin(isFullyExpanded, "height")
+                  : {}),
+                px: 2,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                zIndex: 2,
+              }}
+            >
+              {getItemTitle(navigationItem)}
+            </ListSubheader>
+          );
+        }
+
+        if (navigationItem.kind === "divider") {
+          const nextItem = subNavigation[navigationItemIndex + 1];
+
+          return (
+            <Divider
+              key={`divider-${depth}-${navigationItemIndex}`}
+              sx={{
+                borderBottomWidth: 2,
+                mx: 1,
+                mt: 1,
+                mb: nextItem?.kind === "header" && !isMini ? 0 : 1,
+                ...(hasDrawerTransitions
+                  ? getDrawerSxTransitionMixin(isFullyExpanded, "margin")
+                  : {}),
+              }}
+            />
+          );
+        }
+
+        const navigationItemFullPath = getPageItemFullPath(
+          basePath,
+          navigationItem,
+        );
+        const navigationItemId = `${depth}-${navigationItemIndex}`;
+        const navigationItemTitle = getItemTitle(navigationItem);
+
+        const isNestedNavigationExpanded =
+          expandedSidebarItemIds.includes(navigationItemId);
+
+        const nestedNavigationCollapseIcon = isNestedNavigationExpanded ? (
+          <ExpandLessIcon />
+        ) : (
+          <ExpandMoreIcon />
+        );
+
+        const listItemIconSize = 34;
+
+        const isSelected = isPageItemSelected(
+          navigationItem,
+          basePath,
+          pathname,
+        );
+
+        if (
+          process.env.NODE_ENV !== "production" &&
+          isSelected &&
+          selectedItemId
+        ) {
+          console.warn(
+            `Duplicate selected path in navigation: ${navigationItemFullPath}`,
+          );
+        }
+
+        if (isSelected && !selectedItemId) {
+          selectedItemId = navigationItemId;
+        }
+
+        const listItem = (
+          <ListItem
+            sx={{
+              py: 0,
+              px: 1,
+              overflowX: "hidden",
+            }}
+          >
+            <NavigationListItemButton
+              selected={isSelected && (!navigationItem.children || isMini)}
+              sx={{
+                px: 1.4,
+                height: 48,
+              }}
+              {...(navigationItem.children && !isMini
+                ? {
+                  onClick: handleOpenFolderClick(navigationItemId),
+                }
+                : {
+                  LinkComponent: Link,
+                  href: navigationItemFullPath,
+                  onClick: onLinkClick,
+                })}
+            >
+              {navigationItem.icon || isMini ? (
+                <ListItemIcon
+                  sx={{
+                    minWidth: listItemIconSize,
+                    mr: 1.2,
+                  }}
+                >
+                  {navigationItem.icon && <Icon iconName={navigationItem.icon} />}
+                  {!navigationItem.icon && isMini ? (
+                    <Avatar
+                      sx={{
+                        width: listItemIconSize - 7,
+                        height: listItemIconSize - 7,
+                        fontSize: 12,
+                        ml: "-2px",
+                      }}
+                    >
+                      {navigationItemTitle
+                        .split(" ")
+                        .slice(0, 2)
+                        .map((itemTitleWord) =>
+                          itemTitleWord.charAt(0).toUpperCase(),
+                        )}
+                    </Avatar>
+                  ) : null}
+                </ListItemIcon>
+              ) : null}
+              <ListItemText
+                primary={navigationItemTitle}
+                sx={{
+                  whiteSpace: "nowrap",
+                  zIndex: 1,
+                }}
+              />
+              {navigationItem.action && !isMini && isFullyExpanded
+                ? navigationItem.action
+                : null}
+              {navigationItem.children && !isMini && isFullyExpanded
+                ? nestedNavigationCollapseIcon
+                : null}
+            </NavigationListItemButton>
+          </ListItem>
+        );
+
+        return (
+          <React.Fragment key={navigationItemId}>
+            {isMini ? (
+              <Tooltip title={navigationItemTitle} placement="right">
+                {listItem}
+              </Tooltip>
+            ) : (
+              listItem
+            )}
+
+            {navigationItem.children && !isMini ? (
+              <Collapse
+                in={isNestedNavigationExpanded}
+                timeout="auto"
+                unmountOnExit
+              >
+                <SidebarNavigation
+                  subNavigation={navigationItem.children}
+                  basePath={navigationItemFullPath}
+                  depth={depth + 1}
+                  onLinkClick={onLinkClick}
+                  selectedItemId={selectedItemId}
+                />
+              </Collapse>
+            ) : null}
+          </React.Fragment>
+        );
+      })}
+    </List>
+  );
+};
+
+export default SidebarNavigation;

@@ -1,0 +1,24 @@
+.section-wizard-view-container {
+    padding: 1rem;
+}
+
+.wizard-subsection-container {
+    margin-bottom: 2rem;
+}
+
+.wizard-subsection-container:last-child .wizard-subsection-container-divider {
+    display: none;
+}
+
+.wizard-subsection-container:last-child {
+    margin-bottom: 0;
+}
+
+.chip-container-style {
+    margin-right: 0.9rem;
+}
+
+.chip-title {
+    margin-right: 0.9rem;
+    font-weight: 600
+}

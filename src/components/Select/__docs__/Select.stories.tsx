@@ -1,0 +1,124 @@
+import React, { useState } from "react";
+import { Meta, Story } from "@storybook/react";
+import SelectWrapper from "../Select";
+
+// Define Storybook metadata
+export default {
+  title: "Components/SelectWrapper",
+  component: SelectWrapper,
+  argTypes: {
+    label: {
+      control: "text",
+      description: "The label for the select dropdown",
+    },
+    helperText: {
+      control: "text",
+      description: "Helper text displayed below the select dropdown",
+    },
+    disabled: {
+      control: "boolean",
+      description: "Whether the select dropdown is disabled",
+    },
+    fullWidth: {
+      control: "boolean",
+      description:
+        "Whether the select component takes up the full width of its container",
+    },
+    multiple: {
+      control: "boolean",
+      description: "Whether the select allows multiple selections",
+    },
+    variant: {
+      control: {
+        type: "select",
+        options: ["standard", "outlined", "filled"],
+      },
+      description: "Variant of the select component",
+    },
+    size: {
+      control: {
+        type: "select",
+        options: ["small", "medium"],
+      },
+      description: "Size of the select component",
+    },
+  },
+} as Meta;
+
+// Template function to create the component with different args
+const Template: Story<SelectWrapper> = (args) => {
+  const [selectedValue, setSelectedValue] = useState(args.value);
+
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setSelectedValue(event.target.value);
+  };
+
+  return <SelectWrapper {...args} value={selectedValue} onChange={handleChange} />;
+};
+
+// Define the default story with sample props
+export const Default = Template.bind({});
+Default.args = {
+  label: "Select a Fruit",
+  value: "apple",
+  helperText: "Please select your favorite fruit.",
+  disabled: false,
+  fullWidth: false,
+  multiple: false,
+  variant: "standard",
+  size: "medium",
+};
+
+export const MultipleSelect = Template.bind({});
+MultipleSelect.args = {
+  label: "Select Fruits",
+  value: ["apple", "banana"],
+  helperText: "Select multiple fruits.",
+  disabled: false,
+  fullWidth: false,
+  multiple: true,
+  variant: "standard",
+  size: "medium",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Default.args,
+  disabled: true,
+};
+
+export const OutlinedSelect = Template.bind({});
+OutlinedSelect.args = {
+  label: "Select Fruits (Outlined)",
+  value: "apple",
+  helperText: "Please select your favorite fruit.",
+  disabled: false,
+  fullWidth: false,
+  multiple: false,
+  variant: "outlined",
+  size: "medium",
+};
+
+export const SmallSizeSelect = Template.bind({});
+SmallSizeSelect.args = {
+  label: "Select a Fruit (Small Size)",
+  value: "apple",
+  helperText: "Please select your favorite fruit.",
+  disabled: false,
+  fullWidth: false,
+  multiple: false,
+  variant: "standard",
+  size: "small",
+};
+
+export const FilledSelect = Template.bind({});
+FilledSelect.args = {
+  label: "Select Fruits (Filled)",
+  value: "apple",
+  helperText: "Please select your favorite fruit.",
+  disabled: false,
+  fullWidth: false,
+  multiple: false,
+  variant: "filled",
+  size: "medium",
+};
