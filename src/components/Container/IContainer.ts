@@ -1,4 +1,3 @@
-import React from "react";
 import { SxProps, ContainerProps } from "@mui/material";
 
 export interface Breadcrumb {
@@ -22,12 +21,4 @@ export interface PageHeaderProps {
   title?: string;
   breadcrumbs?: Breadcrumb[];
   pathname: string;
-  separatorType?: string;
-}
-
-export interface IHeaderContainer {
-  pageTitle?: React.ReactNode;
-  toolbarItem?: React.ReactNode;
-  enableBreadcrumbs?: boolean;
-  breadcrumSeparator?: string;
 }
