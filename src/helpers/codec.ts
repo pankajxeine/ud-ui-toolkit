@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 /**
  * A codec that can encode and decode values of type V to and from strings.
  * @typeParam V The type of values that can be encoded and decoded.

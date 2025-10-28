@@ -1,5 +1,6 @@
-import { pathToRegexp } from "path-to-regexp";
+// ud-ui-toolkit
 import invariant from "invariant";
+import { pathToRegexp } from "path-to-regexp";
 import type {
   Navigation,
   NavigationItem,
@@ -32,7 +33,7 @@ export function isPageItemSelected(
 ) {
   return navigationItem.pattern
     ? //@ts-ignore
-      pathToRegexp(`${basePath}/${navigationItem.pattern}`).test(pathname)
+    pathToRegexp(`${basePath}/${navigationItem.pattern}`).test(pathname)
     : getPageItemFullPath(basePath, navigationItem) === pathname;
 }
 

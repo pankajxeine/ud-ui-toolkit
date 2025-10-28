@@ -1,4 +1,5 @@
-import { GridRowsProp, GridColDef, GridDensity } from "@mui/x-data-grid";
+// ud-ui-toolkit
+import { GridColDef, GridDensity, GridRowsProp } from "@mui/x-data-grid";
 
 export type DataTableProps = {
   rows: GridRowsProp;
@@ -11,3 +12,5 @@ export type DataTableProps = {
   type?: GridDensity;
   loading?: boolean;
 };
+
+export type { GridColDef };

@@ -1,19 +1,19 @@
-import * as React from "react";
 import { useTheme } from "@mui/material";
+import type { } from "@mui/material/themeCssVarsAugmentation";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import * as React from "react";
 import { Box } from "../Box";
 import { Toolbar } from "../Toolbar";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import type { } from "@mui/material/themeCssVarsAugmentation";
 
 import {
   NavigationContext,
   WindowContext,
 } from "../../context/Context";
 
-import { AppLayoutProps } from "./ILayout";
+import Footer from "../Footer/Footer";
 import { Header } from "../Header";
 import { SidebarNavigationDrawer } from "../SidebarNavigation";
-import Footer from "../Footer/Footer";
+import { AppLayoutProps } from "./ILayout";
 
 export interface SidebarFooterProps {
   mini: boolean;

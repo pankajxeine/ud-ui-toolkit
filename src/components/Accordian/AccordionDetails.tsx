@@ -1,6 +1,6 @@
 import {
-  AccordionDetails as MuiAccordionDetails,
   AccordionDetailsProps,
+  AccordionDetails as MuiAccordionDetails,
 } from "@mui/material";
 
 const AccordionDetails = (props: AccordionDetailsProps) => {

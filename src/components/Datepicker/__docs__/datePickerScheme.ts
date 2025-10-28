@@ -8,6 +8,7 @@ export const datePickerDefault: IDatePicker = {
   readOnly: false,
   minDate: dayjs("1900-01-01"),
   maxDate: dayjs(),
+  label:"Date of Birth"
 };
 
 export const datepickerWithValue: IDatePicker = {
@@ -17,4 +18,5 @@ export const datepickerWithValue: IDatePicker = {
   readOnly: false,
   minDate: dayjs("1900-01-01"),
   maxDate: dayjs(),
+  label:"Date of Birth"
 };

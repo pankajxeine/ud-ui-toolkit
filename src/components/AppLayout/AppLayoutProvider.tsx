@@ -1,9 +1,9 @@
-import * as React from "react";
 import { createTheme as createMuiTheme, Theme } from "@mui/material/styles";
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Authentication, Session } from "../../types/IAuth";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import * as React from "react";
 import { NavigationContext, WindowContext } from "../../context/Context";
+import { Authentication, Session } from "../../types/IAuth";
 import AppThemeProvider from "./AppThemeProvider";
 import { AppLayoutProviderProps } from "./ILayout";
 

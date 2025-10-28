@@ -1,6 +1,7 @@
+// ud-ui-toolkit
 // src/theme.d.ts or relevant types file
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Theme } from "@mui/material/styles";
+import "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Theme {

@@ -1,3 +1,4 @@
+
 import { Box, BoxProps } from "@mui/material";
 
 const BoxBasic = ({ children, ...props }: BoxProps) => {

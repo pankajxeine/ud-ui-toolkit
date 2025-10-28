@@ -1,4 +1,6 @@
-import React, { memo, useCallback } from "react";
+// ud-ui-toolkit
+import MenuIcon from "@mui/icons-material/Menu";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import {
   AppBar,
   Box,
@@ -8,8 +10,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import MenuIcon from "@mui/icons-material/Menu";
+import React, { memo, useCallback } from "react";
 import { HeaderProps } from "./IHeader";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({

@@ -1,5 +1,6 @@
-import { IReadOnlyFeild } from "../ReadonlyField/IReadOnlyField";
+// ud-ui-toolkit
 import { IChip } from "../Chip/IChip";
+import { IReadOnlyFeild } from "../ReadonlyField/IReadOnlyField";
 export interface IFields {
   options: IReadOnlyFeild;
 }

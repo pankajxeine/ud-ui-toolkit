@@ -1,6 +1,7 @@
+
+import { SxProps } from "@mui/material";
 import { Theme } from "@mui/material/styles";
 import { Navigation } from "../../types/ICommon";
-import { SxProps } from "@mui/material";
 
 export type AppTheme = Theme | { light: Theme; dark: Theme };
 

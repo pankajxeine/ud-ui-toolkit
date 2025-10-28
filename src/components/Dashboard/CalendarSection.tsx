@@ -1,8 +1,9 @@
+// ud-ui-toolkit
 import { Box } from "../Box";
-import { Typography } from "../Typography";
 import CalendarCardEvent from "../CalendarEvent/CalendarEvent";
+import { Typography } from "../Typography";
 const CalendarSection = () => {
- 
+
   // Sample events data
   const events = [
     {
@@ -47,7 +48,7 @@ const CalendarSection = () => {
       {/* Section Title */}
       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 2 }}>
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-        June 6, 2024
+          June 6, 2024
         </Typography>
         {/* <Button variant="contained" color="primary">
           Add Event
@@ -68,7 +69,7 @@ const CalendarSection = () => {
       </Box>
       {/* View Calendar Hyperlink */}
       <Box sx={{ marginTop: 2, display: "flex", justifyContent: "flex-start", position: 'absolute', bottom: '1rem' }}>
-        <a style={{ textTransform: 'uppercase', textDecoration:'none' }} href="#">View calendar</a>
+        <a style={{ textTransform: 'uppercase', textDecoration: 'none' }} href="#">View calendar</a>
       </Box>
 
     </Box>

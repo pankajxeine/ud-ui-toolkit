@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 import is from "is-lite";
 
 import {
@@ -29,8 +30,8 @@ export function cors(
     responseHeaders = undefined,
     statusCode = 200,
   } = is.number(statusCodeOrOptions)
-    ? { statusCode: statusCodeOrOptions }
-    : statusCodeOrOptions;
+      ? { statusCode: statusCodeOrOptions }
+      : statusCodeOrOptions;
 
   const allowMethods = [...methods, "OPTIONS"];
   const allowHeaders = [

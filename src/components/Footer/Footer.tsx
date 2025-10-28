@@ -1,9 +1,10 @@
-import { Box } from "../Box";
+// ud-ui-toolkit
 import Container from "@mui/material/Container";
-import { FooterProps } from "./IFooter";
 import useCreateTheme from "../../hooks/useCreateTheme";
 import ThemeProvider from "../AppLayout/ThemeProvider";
+import { Box } from "../Box";
 import { Stack } from "../Stack";
+import { FooterProps } from "./IFooter";
 
 const Footer = ({ children, footerTheme }: FooterProps) => {
   const theme = useCreateTheme(footerTheme);

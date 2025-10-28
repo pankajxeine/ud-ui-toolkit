@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
 import SelectWrapper from "../Select";
-
+import { FormControl,InputLabel, MenuItem } from "../.././index";
+import { SelectProps, SelectChangeEvent  } from "../ISelect";
 // Define Storybook metadata
 export default {
   title: "Components/SelectWrapper",
@@ -46,14 +47,32 @@ export default {
 } as Meta;
 
 // Template function to create the component with different args
-const Template: Story<SelectWrapper> = (args) => {
-  const [selectedValue, setSelectedValue] = useState(args.value);
+const Template: Story<SelectProps> = (args) => {
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const names =["apple", "banana","orange","kiwi","pineapple"]
+  const [selectedValue, setSelectedValue] = useState(args.value);
+  
+const handleChange = (event: SelectChangeEvent<unknown>) => {
     setSelectedValue(event.target.value);
   };
 
-  return <SelectWrapper {...args} value={selectedValue} onChange={handleChange} />;
+  return (
+    <FormControl sx={{ m: 1, width: 300 }}>
+        <InputLabel id="demo-multiple-name-label">Name</InputLabel>
+  <SelectWrapper {...args} value={selectedValue} onChange={handleChange}>
+
+  {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+            >
+              {name}
+            </MenuItem>
+          ))}
+  </SelectWrapper>
+  </FormControl>
+
+);
 };
 
 // Define the default story with sample props

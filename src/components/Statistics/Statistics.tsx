@@ -1,7 +1,8 @@
-import React from "react";
+// ud-ui-toolkit
 import { useTheme } from "@mui/material";
+import React from "react";
 import { Box } from "../Box";
-import { Paper } from "../Paper";  
+import { Paper } from "../Paper";
 import { Typography } from "../Typography";
 import { StatisticsCardProps } from "./IStatCard";
 
@@ -19,10 +20,10 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({
     <Paper
       sx={{
         ...sxStyles,
-        backgroundColor: color || theme.palette.background.default, 
-        elevation: 0,  
-        boxShadow: "none",  
-        borderRadius: "1rem", 
+        backgroundColor: color || theme.palette.background.default,
+        elevation: 0,
+        boxShadow: "none",
+        borderRadius: "1rem",
       }}
     >
       <Box p={2}>
@@ -30,7 +31,7 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({
         <Typography
           variant="subtitle1"
           sx={{
-            marginBottom: theme.spacing(1), 
+            marginBottom: theme.spacing(1),
             color: '#000',
           }}
         >
@@ -42,7 +43,7 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({
           <Typography
             variant="body2"
             sx={{
-              color: '#000', 
+              color: '#000',
               marginBottom: theme.spacing(2),
             }}
           >

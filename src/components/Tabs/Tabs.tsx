@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 import { Tabs as MuiTabs } from "@mui/material";
 import { CustomTabsProps } from "./types";
 

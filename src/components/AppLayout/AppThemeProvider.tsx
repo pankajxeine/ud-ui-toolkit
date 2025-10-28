@@ -1,11 +1,11 @@
-import * as React from "react";
 import { PaletteMode, Theme, useMediaQuery } from "@mui/material";
-import { ThemeProvider, useColorScheme } from "@mui/material/styles";
-import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import CssBaseline from "@mui/material/CssBaseline";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
+import { ThemeProvider, useColorScheme } from "@mui/material/styles";
 import invariant from "invariant";
-import { useLocalStorageState } from "../../hooks/useLocalStorageState";
+import * as React from "react";
 import { PaletteModeContext } from "../../context/Context";
+import { useLocalStorageState } from "../../hooks/useLocalStorageState";
 import type { AppTheme } from "./ILayout";
 
 const COLOR_SCHEME_ATTRIBUTE = "data-eworldes-template-color-scheme";

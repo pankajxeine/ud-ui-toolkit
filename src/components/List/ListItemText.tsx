@@ -1,5 +1,6 @@
-import React from "react";
+// ud-ui-toolkit
 import MUIListItemText from "@mui/material/ListItemText";
+import React from "react";
 import { ListItemTextProps } from "./types";
 
 /**

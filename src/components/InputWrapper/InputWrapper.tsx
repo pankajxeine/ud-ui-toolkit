@@ -1,27 +1,31 @@
-import React from "react";
+// ud-ui-toolkit
+import InfoIcon from '@mui/icons-material/Info';
 import {
   FormControl,
-  FormLabel,
-  Select,
-  MenuItem,
-  Tooltip,
-  IconButton,
   FormHelperText,
+  FormLabel,
+  IconButton,
+  MenuItem,
   OutlinedInput,
+  Select,
   Stack,
   TextField,
+  Tooltip,
 } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
-import { InputFieldWrapperProps } from '../../types/IInputWrapperProps';
+import React from "react";
+import { InputFieldWrapperProps } from './IInputWrapperProps';
 
 const InputFieldWrapper: React.FC<InputFieldWrapperProps> = ({
+  label,
+  required,
+  info,
+  placeholder,
   error,
-  inputProps,
   errorText,
+  hint,
   children,
   ...rest
 }) => {
-  const { label, required = false, info = "", placeholder = "", hint } = inputProps;
   return (
     <FormControl fullWidth required={required} error={error} {...rest}>
       {/* Use Stack to stack label and hint with padding bottom for the entire block */}

@@ -1,10 +1,12 @@
-import { lightTheme } from "./light.theme";
-import { darkTheme } from "./dark.theme";
+// ud-ui-toolkit
 import colors from "./colors";
+import { darkTheme } from "./dark.theme";
+import { lightTheme } from "./light.theme";
 
 const themes = {
   light: lightTheme,
   dark: darkTheme,
 };
 
-export { themes, colors };
+export { colors, themes };
+

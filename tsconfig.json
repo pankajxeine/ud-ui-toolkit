@@ -24,8 +24,7 @@
     "declaration": true, // Generates declaration files for TypeScript.
   },
   "include": [
-    "src",
-    "../ui-template/src/components/NavInfoCard"
+    "src"
   ], // Specifies the directory to include when searching for TypeScript files.
   "exclude": [
     "src/**/__docs__",

@@ -1,9 +1,10 @@
+// ud-ui-toolkit
 import { useTheme } from "@mui/material";
+import { Link } from "react-router-dom";
 import { Box } from "../Box";
-import { Paper } from "../Paper"; 
+import { Paper } from "../Paper";
 import { Typography } from "../Typography";
 import { CalendarEventProps } from "./ICalendarEventProps";
-import { Link } from "react-router-dom";
 
 const CalendarEvent = ({
   time,
@@ -22,15 +23,15 @@ const CalendarEvent = ({
         ...rest.sxStyles,
         backgroundColor: color,
         borderLeft: `0.25rem solid ${theme.palette.primary.main}`,
-        elevation: 0, 
-        boxShadow: "none", 
-        padding: theme.spacing(1), 
+        elevation: 0,
+        boxShadow: "none",
+        padding: theme.spacing(1),
       }}
     >
       <Box
         sx={{
           display: "flex",
-          justifyContent: "flex-start", 
+          justifyContent: "flex-start",
           gap: "1rem",
         }}
       >
@@ -38,14 +39,14 @@ const CalendarEvent = ({
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column", 
-            justifyContent: "center", 
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          <Typography variant="body2" sx={{color: '#000'}}>
+          <Typography variant="body2" sx={{ color: '#000' }}>
             {time}
           </Typography>
-          <Typography variant="body2" sx={{color: '#000'}}>
+          <Typography variant="body2" sx={{ color: '#000' }}>
             {mins} min
           </Typography>
         </Box>
@@ -54,13 +55,13 @@ const CalendarEvent = ({
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column", 
+            flexDirection: "column",
             justifyContent: "center",
-            alignItems: "flex-start", 
+            alignItems: "flex-start",
           }}
         >
           <Typography variant="body2" sx={{ fontWeight: "bold", color: '#000' }}>
-            {title} 
+            {title}
           </Typography>
           {location && (
             <Typography variant="body2" sx={{ color: '#0000008a', fontSize: theme.typography.body2.fontSize }}>

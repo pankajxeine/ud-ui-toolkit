@@ -1,129 +1,142 @@
-import { FieldError } from "react-hook-form";
+// ud-ui-toolkit
 import { AnyObject, ObjectSchema, TypeFromShape } from "yup";
-// import { TextFieldVariants } from "@mui/material";
-// import { FormControlProps } from "@mui/material/FormControl";
-// import { InputFieldWrapperProps } from "./IInputWrapperProps";
-type SelectKeys = {
-    codeKey: string | number
-    labelKey: string
+import { ButtonProps } from "../components";
+
+export type FormFieldsProps = {
+  formName: string;
+  title: string;
+  fields: InputFieldProps[];
+  leftPanelCol?: number;
+  rightPanelCol?: number;
+  showSubmit?: boolean;
+  showPrevious?: boolean;
+  showNext?: boolean;
+};
+
+export type ButtonActions = {
+  name: string;
+  actiontype: "cancel" | "next" | "previous" | "submit" | "reset" | "discard";
+  handler: (data?: any) => void;
+  align?: "left" | "right" | "center";
+} & ButtonProps;
+
+export interface FormProps {
+  onSubmit: (data: unknown) => void;
+  labelButtonSubmit?: string;
+  titleForm?: string;
+  initialValues: unknown;
+  inputs: FormFieldsProps[];
+  header?: any;
+  contentToolbar?: any;
+  content?: any;
+  innerScroll?: boolean;
+  formView?: "tabs" | "stepper" | "row" | "default";
+  actions: ButtonActions[];
+  actionButtonPosition?: "left" | "right" | "center" | "space-between";
+  stickyHeader?: boolean;
+  stickyFooter?: boolean;
 }
 
-// export interface InputFieldProps {
-//     label: string;
-//     required?: true;
-//     info?: string;
-//     hint?: string;
-//     placeholder?: string;
-//     slots?: any;
-// }
-
-export interface InputProps {
-    type: 'text' | 'radio' | 'email' | 'password' | 'select' | 'checkbox' | 'datepicker' | 'custom' | 'autocomplete' | 'multi-checkbox' | 'multi-check-ac' | 'toggle'
-    component?: any;
-    formName: string;
-    inputProps?: any;
-    required?: boolean;
-    info?: string;
-    hint?: string;
-    placeholder?: string;
-    label: string;
-    name: string;
-    value?: any;
-    typeValue?: 'boolean' | 'number' | 'array'
-    validations?: Validation[]
-    options?: any[]
-    setValue?: any
-    control?: any
-    error?: boolean;
-    errorText?: string;
-    show?: boolean
-    validator?: any,
-    selectKeys?: SelectKeys,
-    onChange?: any,
-    children?: React.ReactNode
-}
+export type SchemaForm = ObjectSchema<
+  {
+    [x: string]: any;
+  },
+  AnyObject,
+  TypeFromShape<
+    {
+      [x: string]: any;
+    },
+    any
+  >
+>;
 
 export interface Opt {
-    value: string | number
-    desc: string
+  value: string | number;
+  desc: string;
 }
+
+export type SelectKeys = {
+  codeKey: string | number;
+  labelKey: string;
+};
+
+export type Dependecy = {
+  ref: string | string[];
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  value: string | boolean | number | object | Function;
+};
 
 export interface Validation {
-    type: 'required' | 'isEmail' | 'minLength' | 'isTrue' | 'oneOf' | 'minArray' | 'regex'
-    value?: string | number | boolean | any | object,
-    regexp?: any
-    message: string
-    ref?: string
+  type:
+  | "required"
+  | "isEmail"
+  | "minLength"
+  | "isTrue"
+  | "oneOf"
+  | "minArray"
+  | "regex";
+  value?: string | number | boolean | any | object;
+  regexp?: any;
+  message: string;
+  ref?: string;
 }
 
-export type FormSection = 'register' | 'another'
-
-export type SchemaForm = ObjectSchema<{
-    [x: string]: any;
-}, AnyObject, TypeFromShape<{
-    [x: string]: any;
-}, any>>
-
-
-export type CustomInputProps = Omit<InputProps, 'validations' | 'typeValue' | 'value'>
-
-export type InputFieldMapperProps = {
-    onChange: any;
-    inputProps: CustomInputProps;
-    errors?: FieldError;
-    fieldValue?: any;
-    children?: React.ReactNode;
-}
-
-export type Size = 'medium'
-    | 'small'
-    | string
-export type Dependecy = {
-    ref: string
-    value: any
-}
-
-export type Color = 'primary'
-    | 'secondary'
-    | 'error'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | string
-
-export type Variant = 'filled' | 'outlined' | 'standard';
-export type FieldProps = {
-    formName: string;
-    title: string;
-    fields: InputFieldProps[];
-}
+export type Variant = "filled" | "outlined" | "standard";
 
 export type InputFieldProps = {
-    name: string;
-    id?: string;
-    show?: boolean
-    type: string;
-    label: string;
-    validator?: any;
-    validations?: Validation[];
-    typeValue?: 'boolean' | 'number' | 'array';
-    control?: any;
-    component?: React.ReactNode;
-    disabled?: boolean;
-    info?: string;
-    hint?: string;
-    options?: Opt[];
-    multiple?: boolean;
-    value: any;
-    meta?: {
-        labelId?: string;
-        required?: boolean;
-        placeholder?: string;
-        size?: any;
-        classes?: any;
-        variant?: Variant;
-        color?: any;
-    },
-    dependencies?: Dependecy[],
-    selectKeys?: SelectKeys,
-}
+  name: string;
+  id?: string;
+  show?: boolean;
+  type:
+  | "text"
+  | "radio"
+  | "email"
+  | "password"
+  | "select"
+  | "select-with-chips"
+  | "checkbox"
+  | "datepicker"
+  | "date-range-picker"
+  | "custom"
+  | "multi-checkbox"
+  | "multi-check-ac"
+  | "toggle"
+  | "switch"
+  | "autocomplete"
+  | "file"
+  | "image"
+  | "nested-multi-form"
+  | "nested-form"
+  | "textarea";
+  label: string;
+  validator?: any;
+  validations?: Validation[];
+  typeValue?: "boolean" | "number" | "array" | "object" | "string";
+  control?: any;
+  component?: any;
+  disabled?: boolean;
+  info?: string;
+  hint?: string;
+  options?: Opt[];
+  multiple?: boolean;
+  value: any;
+  meta?: any;
+  dependency?: Dependecy;
+  selectKeys?: SelectKeys;
+  fieldCol?: number;
+  align?: "left" | "right";
+  fields?: InputFieldProps[];
+};
+
+export type FormBottomPropsActionsProps = {
+  activeFrom: number;
+  formList: any[];
+  formMethods: any;
+  hideActionButtons: boolean;
+  prevButtonProps: any;
+  nextButtonProps: any;
+  onPreviousForm: () => void;
+  onNextForm: () => void;
+  onSubmit: any;
+  otherButtons: ButtonActions[];
+};

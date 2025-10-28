@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import InputFieldWrapper from "../InputWrapper";
-import { InputFieldWrapperProps } from "../../../types/IInputWrapperProps";
+import { InputFieldWrapperProps } from "../IInputWrapperProps";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
@@ -12,23 +12,21 @@ export default {
   title: "Components/InputFieldWrapper",
   component: InputFieldWrapper,
   argTypes: {
-    inputProps: {
-      label: {
-        control: "text",
-        description: "The label for the input field",
-      },
-      required: {
-        control: "boolean",
-        description: "Whether the input field is required",
-      },
-      info: {
-        control: "text",
-        description: "Additional information or helper text",
-      },
-      hint: {
-        control: "text",
-        description: "Hint text to display below the label",
-      },
+    label: {
+      control: "text",
+      description: "The label for the input field",
+    },
+    required: {
+      control: "boolean",
+      description: "Whether the input field is required",
+    },
+    info: {
+      control: "text",
+      description: "Additional information or helper text",
+    },
+    hint: {
+      control: "text",
+      description: "Hint text to display below the label",
     },
     error: {
       control: "boolean",
@@ -42,6 +40,10 @@ export default {
       control: "element",
       description: "Slot for any MUI component or custom component",
     },
+    placeholder: {
+      control: "text",
+      description: "Placeholder text to show inside the input field",
+    },
   },
 } as Meta;
 
@@ -52,12 +54,10 @@ const Template: Story<InputFieldWrapperProps> = (args) => {
 // Default Story
 export const Default = Template.bind({});
 Default.args = {
-  inputProps: {
-    label: "Username",
-    required: false,
-    info: "",
-    hint: "",
-  },
+  label: "Username",
+  required: false,
+  info: "",
+  hint: "",
   children: (
     <TextField variant="outlined" fullWidth placeholder="Enter username" />
   ),
@@ -66,12 +66,10 @@ Default.args = {
 // Required Field Story
 export const Required = Template.bind({});
 Required.args = {
-  inputProps: {
-    label: "Username",
-    required: true,
-    info: "",
-    hint: "",
-  },
+  label: "Username",
+  required: true,
+  info: "",
+  hint: "",
   children: (
     <TextField variant="outlined" fullWidth placeholder="Enter username" />
   ),
@@ -80,12 +78,10 @@ Required.args = {
 // Input Field with Info Story
 export const WithInfo = Template.bind({});
 WithInfo.args = {
-  inputProps: {
-    label: "Email",
-    required: false,
-    info: "Enter a valid email address",
-    hint: "",
-  },
+  label: "Email",
+  required: false,
+  info: "Enter a valid email address",
+  hint: "",
   children: (
     <TextField variant="outlined" fullWidth placeholder="Enter email" />
   ),
@@ -94,25 +90,21 @@ WithInfo.args = {
 // Input Field with Placeholder
 export const WithPlaceholder = Template.bind({});
 WithPlaceholder.args = {
-  inputProps: {
-    label: "Username",
-    required: false,
-    info: "",
-    hint: "Please ensure you have a strong username.",
-    placeholder: "Enter your username",
-  },
+  label: "Username",
+  required: false,
+  info: "",
+  hint: "Please ensure you have a strong username.",
+  placeholder: "Enter your username",
   children: <TextField variant="outlined" fullWidth />,
 };
 
 // Input Field with Error Story
 export const WithError = Template.bind({});
 WithError.args = {
-  inputProps: {
-    label: "Username",
-    required: false,
-    info: "Username is required",
-    hint: "Your username must be unique.",
-  },
+  label: "Username",
+  required: false,
+  info: "Username is required",
+  hint: "Your username must be unique.",
   error: true,
   errorText: "Please enter a username",
   children: (
@@ -123,15 +115,13 @@ WithError.args = {
 // Input Field with Select Component (with Error)
 export const WithSelectComponent = Template.bind({});
 WithSelectComponent.args = {
-  inputProps: {
-    label: "Country",
-    required: false,
-    info: "",
-    hint: "Select your country from the list.",
-    placeholder: "Please select a country",
-  },
+  label: "Country",
+  required: false,
+  info: "",
+  hint: "Select your country from the list.",
   error: false,
   errorText: "",
+  placeholder: "Please select a country",
   children: (
     <Select label="Country" defaultValue="" variant="outlined" fullWidth>
       <MenuItem value="us">United States</MenuItem>
@@ -144,15 +134,13 @@ WithSelectComponent.args = {
 // Select with Error Story
 export const SelectWithError = Template.bind({});
 SelectWithError.args = {
-  inputProps: {
-    label: "Country",
-    required: true, // Required select field
-    info: "Select your country of residence",
-    hint: "Choose the country where you live.",
-    placeholder: "Please select a country",
-  },
+  label: "Country",
+  required: true, // Required select field
   error: true, // Error state
   errorText: "Please select a country",
+  info: "Select your country of residence",
+  hint: "Choose the country where you live.",
+  placeholder: "Please select a country",
   children: (
     <Select label="Country" defaultValue="" variant="outlined" fullWidth>
       <MenuItem value="us">United States</MenuItem>
@@ -165,12 +153,10 @@ SelectWithError.args = {
 // Radio Button Example
 export const WithRadio = Template.bind({});
 WithRadio.args = {
-  inputProps: {
-    label: "Gender",
-    required: true,
-    info: "",
-    hint: "Select your gender.",
-  },
+  label: "Gender",
+  required: true,
+  info: "",
+  hint: "Select your gender.",
   children: (
     <>
       <FormControlLabel control={<Radio />} label="Male" value="male" />

@@ -1,12 +1,10 @@
-import React from "react";
+// ud-ui-toolkit
 import MUITimeline from "@mui/lab/Timeline";
+import React from "react";
 import { TimelineProps } from "./types";
 
 const Timeline: React.FC<TimelineProps> = ({ children, ...props }) => {
-  return (
-    //@ts-ignore
-    <MUITimeline {...props}>{children}</MUITimeline>
-  )
+  return <MUITimeline {...props}>{children}</MUITimeline>;
 };
 
 export default Timeline;

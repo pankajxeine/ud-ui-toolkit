@@ -1,6 +1,7 @@
-import Chip from "./MUIChip";
+// ud-ui-toolkit
 import { Stack } from "@mui/material";
 import { IChipProp } from "./IChip";
+import Chip from "./MUIChip";
 
 /**
  *

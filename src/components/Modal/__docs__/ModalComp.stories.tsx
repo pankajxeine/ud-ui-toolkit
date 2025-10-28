@@ -9,7 +9,7 @@ export default {
   component: Modal,
   argTypes: {
     title: { control: "text" },
-    bodyContent: { control: "text" },
+    bodycontent: { control: "text" },
   },
 } as Meta;
 
@@ -30,7 +30,7 @@ const Template = (args) => (
       <Typography variant="h6" component="h2">
         {args.title}
       </Typography>
-      <Typography sx={{ mt: 2 }}>{args.bodyContent}</Typography>
+      <Typography sx={{ mt: 2 }}>{args.bodycontent}</Typography>
     </Box>
   </Modal>
 );

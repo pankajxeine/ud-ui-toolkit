@@ -1,10 +1,11 @@
-import { ISectionWizardViewProps, ISubsection } from "./types";
-import "./SectionWizardView.css";
-import { ReadOnlyField } from "../ReadonlyField";
-import { Chip } from "../Chip";
-import { Grid } from "../Grid";
-import { Divider } from "../Divider";
+// ud-ui-toolkit
 import { Card } from "../Card";
+import { Chip } from "../Chip";
+import { Divider } from "../Divider";
+import { Grid } from "../Grid";
+import { ReadOnlyField } from "../ReadonlyField";
+import "./SectionWizardView.css";
+import { ISectionWizardViewProps, ISubsection } from "./types";
 
 const WizardSubsection = ({ options }: { options: ISubsection }) => {
   const { statusSection, section, footer: Footer, isFullScreen } = options;

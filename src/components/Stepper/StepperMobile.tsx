@@ -1,6 +1,7 @@
+// ud-ui-toolkit
 import {
-  MobileStepper as MuiMobileStepper,
   MobileStepperProps,
+  MobileStepper as MuiMobileStepper,
 } from "@mui/material";
 
 const StepperMobile = (props: MobileStepperProps) => {

@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 import { useEffect, useRef } from "react";
 
 const useUpdateEffect = (effect: any, deps: any) => {
@@ -6,8 +7,8 @@ const useUpdateEffect = (effect: any, deps: any) => {
   useEffect(
     isInitialMount.current
       ? () => {
-          isInitialMount.current = false;
-        }
+        isInitialMount.current = false;
+      }
       : effect,
     deps,
   );

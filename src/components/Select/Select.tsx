@@ -1,8 +1,8 @@
-
+// ud-ui-toolkit
 import { Select, SelectProps } from "./ISelect";
 
-const SelectWrapper = ({ children, ...rest }: SelectProps) => {
-  return <Select {...rest}> {children} </Select>;
+const SelectWrapper = ({ children, isChip, helperText, ...rest }: SelectProps & { isChip?: boolean }) => {
+  return <Select {...rest}>{children}</Select>;
 };
 
 export default SelectWrapper;

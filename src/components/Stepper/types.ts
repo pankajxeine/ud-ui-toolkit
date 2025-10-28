@@ -1,8 +1,9 @@
+// ud-ui-toolkit
 import {
+  MobileStepperProps,
+  StepLabelProps,
   StepperProps,
   StepProps,
-  StepLabelProps,
-  MobileStepperProps,
 } from "@mui/material";
 
 export interface CustomStepperProps {

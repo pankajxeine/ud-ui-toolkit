@@ -1,5 +1,6 @@
-import React from "react";
+// ud-ui-toolkit
 import MUITimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
+import React from "react";
 import { TimelineItemProps } from "./types";
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ children, ...props }) => {
@@ -9,4 +10,5 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ children, ...props }) => {
 export default TimelineItem;
 export {
   timelineItemClasses
-}
+};
+

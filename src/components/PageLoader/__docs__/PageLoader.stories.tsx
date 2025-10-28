@@ -8,7 +8,7 @@ export default {
   component: PageLoader,
   argTypes: {
     title: { control: "text" },
-    bodyContent: { control: "text" },
+    bodycontent: { control: "text" },
   },
 } as Meta;
 

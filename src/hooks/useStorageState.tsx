@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 import * as React from "react";
 import { CODEC_STRING, Codec } from "../helpers/codec";
 
@@ -50,7 +51,7 @@ function subscribe(
   callback: () => void,
 ): () => void {
   if (!key) {
-    return () => {};
+    return () => { };
   }
   const storageHandler = (event: StorageEvent) => {
     if (event.storageArea === area && event.key === key) {
@@ -99,7 +100,7 @@ export type UseStorageStateHookResult<T> = [
   React.Dispatch<React.SetStateAction<T | null>>,
 ];
 
-const serverValue: UseStorageStateHookResult<any> = [null, () => {}];
+const serverValue: UseStorageStateHookResult<any> = [null, () => { }];
 
 export function useStorageStateServer<
   T = string,

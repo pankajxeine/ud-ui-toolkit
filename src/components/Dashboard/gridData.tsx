@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 import { Avatar } from '../Avatar';
 
 export function renderAvatar(params: any) {
@@ -21,10 +22,10 @@ export function renderAvatar(params: any) {
 
 export const columns: any[] = [
     { field: 'received', headerName: 'Received', flex: 1, minWidth: 150 },
-    { 
-        field: 'trackingNumber', 
-        headerName: 'Tracking Number', 
-        flex: 1.2, 
+    {
+        field: 'trackingNumber',
+        headerName: 'Tracking Number',
+        flex: 1.2,
         minWidth: 200,
         renderCell: (params: any) => (
             <a href={`#`} style={{ color: '#1976d2', textDecoration: 'none' }}>

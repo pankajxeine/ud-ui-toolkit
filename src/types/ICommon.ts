@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 export type GenericFunction<T = any> = (...arguments_: any[]) => T;
 
 export type PlainObject<T = any> = Record<string, T>;
@@ -187,7 +188,7 @@ export interface NavigationPageItem {
   kind?: "page";
   segment?: string;
   title?: string;
-  icon?: string;
+  icon?: React.ReactNode;
   link?: string,
   pattern?: string;
   action?: React.ReactNode;

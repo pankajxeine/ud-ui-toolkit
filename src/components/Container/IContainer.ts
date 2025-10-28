@@ -1,5 +1,6 @@
+// ud-ui-toolkit
+import { ContainerProps, SxProps } from "@mui/material";
 import React from "react";
-import { SxProps, ContainerProps } from "@mui/material";
 
 export interface Breadcrumb {
   title: string;
@@ -30,5 +31,4 @@ export interface IHeaderContainer {
   toolbarItem?: React.ReactNode;
   enableBreadcrumbs?: boolean;
   breadcrumSeparator?: string;
-  children?: React.ReactNode
 }

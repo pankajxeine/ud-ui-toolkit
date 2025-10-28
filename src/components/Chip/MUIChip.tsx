@@ -1,3 +1,4 @@
+// ud-ui-toolkit
 import Chip from "@mui/material/Chip";
 import { IChip } from "./IChip";
 
@@ -7,12 +8,10 @@ import { IChip } from "./IChip";
  * @returns
  */
 export default function MUIChip(props: IChip) {
-  const varient = props.variant || "filled";
   return (
     <Chip
       label={props.title}
-      variant={varient}
-      style={{ border: varient === "filled" ? "0px" : "inherit" }}
+      variant={props.variant}
       sx={{
         maxWidth: "fit-content",
         height: "24px",

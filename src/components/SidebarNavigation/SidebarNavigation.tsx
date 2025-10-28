@@ -1,16 +1,16 @@
+// ud-ui-toolkit
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { styled } from "@mui/material";
+import type { } from "@mui/material/themeCssVarsAugmentation";
 import * as React from "react";
 import { useLocation } from "react-router-dom";
-import { styled } from "@mui/material";
 import { Avatar } from "../Avatar";
 import { Collapse } from "../Collapse";
 import { Divider } from "../Divider";
-import { Tooltip } from "../Tooltip";
-import { Icon } from "../Icon";
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "../List";
-import type { } from "@mui/material/themeCssVarsAugmentation";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link } from "../Link";
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "../List";
+import { Tooltip } from "../Tooltip";
 import type { SidebarNavigationProps } from "./ISidebar";
 
 import {
@@ -20,8 +20,8 @@ import {
   isPageItemSelected,
 } from "../../helpers/navigation";
 
-import { getDrawerSxTransitionMixin } from "../../utils";
 import pxToRem from "../../helpers/pxToRem";
+import { getDrawerSxTransitionMixin } from "../../utils";
 
 const NavigationListItemButton = styled(ListItemButton)(({ theme }) => ({
   borderRadius: 8,
@@ -216,7 +216,7 @@ const SidebarNavigation = ({
                     mr: 1.2,
                   }}
                 >
-                  {navigationItem.icon && <Icon iconName={navigationItem.icon} />}
+                  {navigationItem.icon ?? null}
                   {!navigationItem.icon && isMini ? (
                     <Avatar
                       sx={{

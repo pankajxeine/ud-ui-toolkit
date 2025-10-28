@@ -1,6 +1,7 @@
+// ud-ui-toolkit
+import FormControlLabel from "@mui/material/FormControlLabel";
 import React from "react";
-import  FormControlLabel  from "@mui/material/FormControlLabel";
-import { FormControlLabelWrapperProps } from "./IFormControlLabelProps"; 
+import { FormControlLabelWrapperProps } from "./IFormControlLabelProps";
 const FormControlLabelWrapper: React.FC<FormControlLabelWrapperProps> = ({ control, label, ...rest }) => {
   return <FormControlLabel control={control} label={label} {...rest} />;
 };

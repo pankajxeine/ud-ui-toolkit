@@ -1,6 +1,7 @@
+// ud-ui-toolkit
 import { DataGrid, GridPagination } from "@mui/x-data-grid";
-import { DataTableProps } from "./IDataTable";
 import { Grid } from "../Grid";
+import { DataTableProps } from "./IDataTable";
 
 export default function DataTable(props: DataTableProps) {
   const {
@@ -73,6 +74,7 @@ export default function DataTable(props: DataTableProps) {
             <Grid
               container
               width={"100%"}
+              height={'auto'}
               direction="row"
               sx={{
                 alignItems: "center",

@@ -1,13 +1,14 @@
-import React from "react";
+// ud-ui-toolkit
 import Toolbar from "@mui/material/Toolbar";
+import React from "react";
+import {
+  getDrawerSxTransitionMixin,
+  getDrawerWidthTransitionMixin,
+} from "../../utils";
 import { Box } from "../Box";
 import { Drawer } from "../Drawer";
-import SidebarNavigation from "./SidebarNavigation";
-import {
-  getDrawerWidthTransitionMixin,
-  getDrawerSxTransitionMixin,
-} from "../../utils";
 import { SidebarNavigationDrawerProps } from "./ISidebar";
+import SidebarNavigation from "./SidebarNavigation";
 
 const SidebarNavigationDrawer = ({
   sidebarExpandedWidth = 320,

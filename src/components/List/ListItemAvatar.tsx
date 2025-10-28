@@ -1,5 +1,6 @@
-import React from "react";
+// ud-ui-toolkit
 import MUIListItemAvatar from "@mui/material/ListItemAvatar";
+import React from "react";
 import { ListItemAvatarProps } from "./types";
 
 /**

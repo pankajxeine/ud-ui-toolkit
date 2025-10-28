@@ -1,5 +1,6 @@
+// ud-ui-toolkit
+import InputLabel from "@mui/material/InputLabel";
 import React from "react";
-import  InputLabel  from "@mui/material/InputLabel";
 import { InputLabelWrapperProps } from "./IInputLabelProps";
 
 const InputLabelWrapper: React.FC<InputLabelWrapperProps> = ({ children, ...rest }) => {

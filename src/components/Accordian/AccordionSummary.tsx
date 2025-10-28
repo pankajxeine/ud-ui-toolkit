@@ -1,6 +1,6 @@
 import {
-  AccordionSummary as MuiAccordionSummary,
   AccordionSummaryProps,
+  AccordionSummary as MuiAccordionSummary,
 } from "@mui/material";
 
 const AccordionSummary = (props: AccordionSummaryProps) => {

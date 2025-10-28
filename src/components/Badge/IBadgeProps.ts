@@ -1,3 +1,4 @@
+
 import { BadgeProps } from "@mui/material/Badge";
 
 // Define the interface for the BadgeWrapper component props
