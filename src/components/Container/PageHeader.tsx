@@ -2,20 +2,13 @@ import { Breadcrumbs } from "../Breadcrumbs";
 import { Link } from "../Link";
 import { Stack } from "../Stack";
 import { Typography } from "../Typography";
-import { styled } from "@mui/material";
 import { getItemTitle } from "../../helpers/navigation";
 import { useActivePage } from "../../hooks/useActivePage";
 import { PageHeaderProps } from "./IContainer";
 
-const PageContentHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  gap: theme.spacing(2),
-}));
 
 export default function PageHeader(props: PageHeaderProps) {
-  const { breadcrumbs, title, pathname } = props;
+  const { breadcrumbs, title, pathname, separatorType } = props;
 
   const activePage = useActivePage(pathname);
 
@@ -25,7 +18,7 @@ export default function PageHeader(props: PageHeaderProps) {
   console.log("resolvedTitle", resolvedTitle);
   return (
     <Stack>
-      <Breadcrumbs aria-label="breadcrumb">
+      <Breadcrumbs aria-label="breadcrumb" separator={separatorType || ">"}>
         {resolvedBreadcrumbs
           ? resolvedBreadcrumbs.map((item: any, index: number) => {
             return index < resolvedBreadcrumbs.length - 1 ? (
@@ -47,11 +40,6 @@ export default function PageHeader(props: PageHeaderProps) {
           })
           : null}
       </Breadcrumbs>
-      <PageContentHeader>
-        {resolvedTitle ? (
-          <Typography variant="h4">{resolvedTitle}</Typography>
-        ) : null}
-      </PageContentHeader>
     </Stack>
   );
 }
