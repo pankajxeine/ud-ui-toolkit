@@ -8,9 +8,9 @@ import { PaletteModeContext } from "../../context/Context";
 import { useLocalStorageState } from "../../hooks/useLocalStorageState";
 import type { AppTheme } from "./ILayout";
 
-const COLOR_SCHEME_ATTRIBUTE = "data-eworldes-template-color-scheme";
-const COLOR_SCHEME_STORAGE_KEY = "eworldes-template-color-scheme";
-const MODE_STORAGE_KEY = "eworldes-template-mode";
+const COLOR_SCHEME_ATTRIBUTE = "data-ud-color-scheme";
+const COLOR_SCHEME_STORAGE_KEY = "ud-color-scheme";
+const MODE_STORAGE_KEY = "ud-template-mode";
 
 function usePreferredMode(window?: Window) {
   const prefersDarkMode = useMediaQuery(

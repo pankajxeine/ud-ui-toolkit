@@ -24,13 +24,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eWorldES/eworldes-ui-toolkit.git"
+    "url": "git@github.com:pankajxeine/ud-ui-toolkit.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/eWorldES/eworldes-ui-toolkit.git/issues"
+    "url": "https://github.com/pankajxeine/ud-ui-toolkit/issues"
   },
-  "homepage": "https://github.com/eWorldES/eworldes-ui-toolkit.git#readme",
+  "homepage": "https://github.com/pankajxeine/ud-ui-toolkit.git#readme",
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.1",
     "@storybook/addon-interactions": "^7.4.1",

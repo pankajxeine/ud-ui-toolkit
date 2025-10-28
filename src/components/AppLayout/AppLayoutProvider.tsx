@@ -16,7 +16,7 @@ export const SessionContext = React.createContext<Session | null>(null);
 function createTheme(): Theme {
   return createMuiTheme({
     cssVariables: {
-      colorSchemeSelector: "data-eworldes-template-color-scheme",
+      colorSchemeSelector: "data-ud-color-scheme",
     },
     colorSchemes: { dark: true },
   });

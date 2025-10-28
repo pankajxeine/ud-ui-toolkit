@@ -86,7 +86,7 @@ const menuItems = [
 const profile = {
   name: "Pankaj Kumar",
   image: "",
-  email: "pKumar@eworldes.com",
+  email: "urbandukan@ud.com",
 };
 
 export default {
