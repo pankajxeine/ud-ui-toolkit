@@ -11,6 +11,16 @@ import {
   Theme,
   Tooltip,
 } from "@mui/material";
+// import { Drawer } from '../Drawer';
+// import { IconButton } from '../IconButton';
+// import { Box } from '../Box';
+// import { Typography } from '../Typography';
+// import { Button } from '../Button';
+// import { Badge } from '../Badge';
+// import { Link } from '../Link';
+// import { useMediaQuery, Theme } from '@mui/material';
+// import { Tooltip } from '../Tooltip';
+
 import CloseIcon from "@mui/icons-material/Close";
 import { NotificationDrawerProps } from "./INotificationDrawer";
 
@@ -40,36 +50,38 @@ const NotificationDrawer: React.FC<NotificationDrawerProps> = ({
     <>
       {/* Trigger (Button, Icon, or Link) */}
       <Tooltip title={tooltipContent} arrow>
-        {type === "button" && (
-          <Button onClick={() => setOpen(true)} startIcon={<span className="material-icons">{icon}</span>}>
-            {heading}
-          </Button>
-        )}
-        {type === "icon" && (
-          <IconButton onClick={() => setOpen(true)} sx={{ position: "relative" }}>
-            {showBadge ? (
-              <Badge
-                badgeContent={badgeContent}
-                color="error"
-                overlap="circular"
-                sx={{
-                  "& .MuiBadge-badge": {
-                    fontSize: "0.75rem",
-                    height: 18,
-                    minWidth: 18,
-                  },
-                }}
-              >
+        <>
+          {type === "button" && (
+            <Button onClick={() => setOpen(true)} startIcon={<span className="material-icons">{icon}</span>}>
+              {heading}
+            </Button>
+          )}
+          {type === "icon" && (
+            <IconButton onClick={() => setOpen(true)} sx={{ position: "relative" }}>
+              {showBadge ? (
+                <Badge
+                  badgeContent={badgeContent}
+                  color="error"
+                  overlap="circular"
+                  sx={{
+                    "& .MuiBadge-badge": {
+                      fontSize: "0.75rem",
+                      height: 18,
+                      minWidth: 18,
+                    },
+                  }}
+                >
+                  <span className="material-icons">{icon}</span>
+                </Badge>
+              ) : (
                 <span className="material-icons">{icon}</span>
-              </Badge>
-            ) : (
-              <span className="material-icons">{icon}</span>
-            )}
-          </IconButton>
-        )}
-        {type === "link" && (
-          <Link onClick={() => setOpen(true)}>{heading}</Link>
-        )}
+              )}
+            </IconButton>
+          )}
+          {type === "link" && (
+            <Link onClick={() => setOpen(true)}>{heading}</Link>
+          )}
+        </>
       </Tooltip>
 
       {/* Drawer */}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import { Snackbar, SnackbarContent } from "..";
 import { Checkbox } from "../../Checkbox";
 

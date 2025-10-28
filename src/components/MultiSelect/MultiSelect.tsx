@@ -1,6 +1,14 @@
 // ud-ui-toolkit
 import * as React from 'react';
-import { Box, Checkbox, Chip, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput } from '../../index';
+import { Box } from '../../components/Box';
+import { Checkbox } from '../../components/Checkbox';
+import { Chip } from '../../components/Chip';
+import { FormControl } from '../../components/FormControl';
+import { InputLabel } from '../../components/InputLabel';
+import ListItemText from '../../components/List/ListItemText';
+import { MenuItem } from '../../components/MenuItem';
+import { OutlinedInput } from '../../components/OutlinedInputWrapper';
+
 import Select, { IMultiselect, SelectChangeEvent } from './IMultiSelect';
 
 export default function MultipleSelect({

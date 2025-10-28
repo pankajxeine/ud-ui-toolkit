@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import DrawerBasic from "../Drawer";
 import { CustomDrawerProps } from "../types";
 

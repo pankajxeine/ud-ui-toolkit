@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import { rows, columns } from "./gridOrderData";
 import DataTable from "../DataTable";
 import { DataTableProps } from "../IDataTable";

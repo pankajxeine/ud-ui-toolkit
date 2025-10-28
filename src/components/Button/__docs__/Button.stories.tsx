@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import { Button } from "..";
 import { LoadingButtonProps, LoadingButton } from "..";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Outlet } from 'react-router-dom'
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import { createTheme } from "@mui/material/styles";
 import AppLayoutProvider from "../AppLayoutProvider";
 import { AppLayoutProviderProps } from "../ILayout";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import SearchWrapper from "../Search";
 import { TextFieldProps } from "@mui/material/TextField";
 

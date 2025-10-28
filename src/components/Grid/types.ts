@@ -1,4 +1,4 @@
 // ud-ui-toolkit
-import { Grid2Props } from "@mui/material/Grid2";
+import { GridProps } from "@mui/material/Grid";
 
-export interface GridProps extends Grid2Props { }
+export interface CustomGridProps extends GridProps { }

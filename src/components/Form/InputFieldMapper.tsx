@@ -1,7 +1,7 @@
 // ud-ui-toolkit
 import { FormLabel } from "@mui/material";
 import { InputFieldProps } from "../../types/InputProps";
-import FormAutoComplete from "../Inputs/FormAutoComplete";
+import FormAutoComplete from "../Inputs/FormAutocomplete";
 import FormCheckBox from "../Inputs/FormCheckbox";
 import FormDatePicker from "../Inputs/FormDatePicker";
 import FormInputText from "../Inputs/FormInputText";

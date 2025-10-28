@@ -172,6 +172,7 @@ const SidebarNavigation = ({
         );
 
         if (
+          //@ts-ignore
           process.env.NODE_ENV !== "production" &&
           isSelected &&
           selectedItemId

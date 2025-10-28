@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Meta } from "@storybook/react";
+import { ComponentStory, Meta } from "@storybook/react-vite";
 
 import { Tooltip } from "../index";
 import { Grid } from "../../Grid";

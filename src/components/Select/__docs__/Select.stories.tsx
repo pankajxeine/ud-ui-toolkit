@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import SelectWrapper from "../Select";
 import { FormControl,InputLabel, MenuItem } from "../.././index";
 import { SelectProps, SelectChangeEvent  } from "../ISelect";

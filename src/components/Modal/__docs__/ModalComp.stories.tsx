@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Modal, Box, Typography } from "../../../index";
 import { IModal } from "../IModal";
 import { modalDialogProps } from "./modalSchema";

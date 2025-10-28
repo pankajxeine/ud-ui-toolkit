@@ -1,9 +1,9 @@
 // ud-ui-toolkit
 import FormControl from "@mui/material/FormControl";
-import React from "react";
+// import React from "react";
 import { FormControlWrapperProps } from "./IFormControl";
 
-const FormControlWrapper: React.FC<FormControlWrapperProps> = ({ children, ...rest }) => {
+const FormControlWrapper = ({ children, ...rest }: FormControlWrapperProps) => {
   return <FormControl {...rest}>{children}</FormControl>;
 };
 

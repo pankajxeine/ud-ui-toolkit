@@ -3,7 +3,7 @@ export interface Column {
   field: string;
   headerName: string;
   width?: number;
-  renderCell?: (params: any) => JSX.Element;
+  renderCell?: (params: any) => any;
 }
 
 export interface FilterConfig {

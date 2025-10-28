@@ -1,6 +1,6 @@
 import React from 'react';
 import {MultiSelect,IMultiselect} from '../index'; 
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import {multiSelectDefault,multiSelectChip,multiSelectCheckbox}  from "./MultiSelectSchema";
 // Storybook meta configuration
 export default {

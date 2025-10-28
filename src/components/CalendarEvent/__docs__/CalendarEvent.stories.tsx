@@ -1,6 +1,6 @@
 // CalendarEvent.stories.tsx
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import CalendarEvent from "../CalendarEvent"; // Import your CalendarEvent component
 import { CalendarEventProps } from "../ICalendarEventProps"; // Import the interface for typing
 

@@ -22,7 +22,7 @@ function isPrimitive(val: any) {
 }
 
 function useDeepCompareMemoize(value: any) {
-  const ref = useRef();
+  const ref = useRef<any>(undefined);
 
   if (!deepEqual(value, ref.current)) {
     ref.current = value;
@@ -32,14 +32,17 @@ function useDeepCompareMemoize(value: any) {
 }
 
 export function useDeepCompareEffect(callback: any, dependencies: any) {
+  //@ts-ignore
   if (process.env.NODE_ENV !== 'production') {
     checkDeps(dependencies);
   }
   // eslint-disable-next-line
+  //@ts-ignore
   useEffect(callback, useDeepCompareMemoize(dependencies));
 }
 
 export function useDeepCompareEffectNoCheck(callback: any, dependencies: any) {
   // eslint-disable-next-line
+  //@ts-ignore
   useEffect(callback, useDeepCompareMemoize(dependencies));
 }

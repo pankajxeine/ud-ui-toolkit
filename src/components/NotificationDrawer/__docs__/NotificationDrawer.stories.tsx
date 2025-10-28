@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react-vite";
 import NotificationDrawer from "../NotificationDrawer";
 import { Box, Typography, Button, Link } from "@mui/material";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Meta } from "@storybook/react";
+import { ComponentStory, Meta } from "@storybook/react-vite";
 import { Accordion, AccordionSummary, AccordionDetails, AccordionActions } from "../index";
 import { Button, Typography } from '../../index'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

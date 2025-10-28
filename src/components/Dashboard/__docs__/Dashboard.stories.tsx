@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import { Box } from "../../Box";
 import { Paper } from "../../index";
 import { Grid } from "../../Grid";

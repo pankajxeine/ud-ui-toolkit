@@ -1,6 +1,6 @@
 // Storybook configuration file
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import Footer from "../Footer";
 import { Stack } from "../../Stack";
 import { FooterProps } from "../IFooter";

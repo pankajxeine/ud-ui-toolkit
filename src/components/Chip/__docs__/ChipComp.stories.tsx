@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import { MultiChip, Chip } from "../index";
 import { IChipProp } from "../IChip";
 import { DefaultChipProps, multiChipsList } from "./chipSchema";

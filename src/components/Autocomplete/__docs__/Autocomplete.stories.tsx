@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import AutocompleteWrapper from "../Autocomplete";
 import { AutocompleteProps, TextField } from "@mui/material";
 

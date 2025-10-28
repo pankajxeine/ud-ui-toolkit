@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import FormControlLabelWrapper from "../../FormControlLabel/FormControlLabel";
 import { FormControlLabelWrapperProps } from "../../FormControlLabel/IFormControlLabelProps";
 

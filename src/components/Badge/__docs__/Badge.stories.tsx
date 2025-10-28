@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import BadgeWrapper from "../Badge";
 import { BadgeWrapperProps } from "../IBadgeProps";
 import { Avatar, IconButton } from "@mui/material";

@@ -1,5 +1,5 @@
 // ud-ui-toolkit
-export { default as FormAutoComplete } from "./FormAutoComplete";
+export { default as FormAutoComplete } from "./FormAutocomplete";
 export { default as FormCheckbox } from "./FormCheckbox";
 export { default as FormDatePicker } from "./FormDatePicker";
 export { default as FormFileUpload } from "./FormFileUpload";

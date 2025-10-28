@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from "@storybook/react-vite";
 import Stack from "@mui/material/Stack";
 import Typography from "../Typography";
 

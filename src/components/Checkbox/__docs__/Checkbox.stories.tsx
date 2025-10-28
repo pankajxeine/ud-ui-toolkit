@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import CheckboxWrapper from "../Checkbox";
 import { CheckboxWrapperProps } from "../ICheckbox";
 import { Checkbox } from "@mui/material";

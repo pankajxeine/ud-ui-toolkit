@@ -1,6 +1,5 @@
 // ud-ui-toolkit
 import MUIListItemText from "@mui/material/ListItemText";
-import React from "react";
 import { ListItemTextProps } from "./types";
 
 /**
@@ -9,7 +8,7 @@ import { ListItemTextProps } from "./types";
  * @param props MUI ListItemText properties extended with custom props.
  * @returns JSX.Element
  */
-const ListItemText: React.FC<ListItemTextProps> = (props) => {
+const ListItemText = (props: ListItemTextProps) => {
   return <MUIListItemText {...props} />;
 };
 

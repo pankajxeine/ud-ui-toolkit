@@ -1,9 +1,8 @@
 // ud-ui-toolkit
 import MenuItem from "@mui/material/MenuItem";
-import React from "react";
 import { MenuItemWrapperProps } from "./IMenuItemProps";
 
-const MenuItemWrapper: React.FC<MenuItemWrapperProps> = ({ children, ...rest }) => {
+const MenuItemWrapper = ({ children, ...rest }: MenuItemWrapperProps) => {
   return <MenuItem {...rest}>{children}</MenuItem>;
 };
 

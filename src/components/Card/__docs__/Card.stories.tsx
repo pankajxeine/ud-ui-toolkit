@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Meta } from "@storybook/react";
+import { ComponentStory, Meta } from "@storybook/react-vite";
 import Stack from "@mui/material/Stack";
 import { Box } from '../../index'
 import { Card } from '../../index'

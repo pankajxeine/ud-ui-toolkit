@@ -1,6 +1,6 @@
 // Storybook configuration file
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import AccountMenu from "../AccountMenu";
 import { ProfileMenu } from "../AccountMenu";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Meta } from "@storybook/react";
+import { ComponentStory, Meta } from "@storybook/react-vite";
 import { Form } from "../index";
 import { basicConfig } from "./BasicConfig";
 import dayjs from "dayjs";

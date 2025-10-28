@@ -1,6 +1,6 @@
 // Storybook configuration file
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import Header from "../Header";
 import { HeaderProps } from "../IHeader";
 import { headerThemeConfig } from "./headerProps";

@@ -2,7 +2,7 @@
 import EditIcon from "@mui/icons-material/Edit";
 import { Chip, IconButton } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { Meta, Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react-vite";
 import React, { useState } from "react";
 import Filters from "../../Filter/Filter";
 import { FilterConfig } from "../../Filter/IFilter";
